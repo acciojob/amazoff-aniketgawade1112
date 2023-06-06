@@ -12,7 +12,7 @@ public class TimeUtil {
         List<String> list = Arrays.asList(deliveryTime.split(":"));
         int HH = Integer.parseInt(list.get(0));
         int MM = Integer.parseInt((list.get(1)));
-        return HH * 60 + HH;
+        return HH * 60 + MM;
     }
 
     public static String convertTime(int deliveryTime) {
