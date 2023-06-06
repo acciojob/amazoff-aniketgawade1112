@@ -33,7 +33,7 @@ public class OrderService {
             throw new RuntimeException("Order id not present: " + orderId);
         }
         if (partnerOptional.isEmpty()) {
-            throw new RuntimeException("Partner id not presnt: " + partnerId);
+            throw new RuntimeException("Partner id not present: " + partnerId);
         }
 
         DeliveryPartner partner = partnerOptional.get();
