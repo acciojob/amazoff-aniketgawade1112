@@ -16,11 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("orders")
+@RequestMapping("/orders")
 public class OrderController {
 
-    @Autowired
-    OrderService orderService;
+    OrderService orderService = new OrderService();
 
     @PostMapping("/add-order")
     public ResponseEntity<String> addOrder(@RequestBody Order order){
@@ -50,7 +49,7 @@ public class OrderController {
         try {
             Order order = orderService.getOrderById(orderId);
             //order should be returned with an orderId.
-            return new ResponseEntity<>(order, HttpStatus.CREATED);
+            return new ResponseEntity<>(order, HttpStatus.OK);
         } catch (RuntimeException ex) {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }

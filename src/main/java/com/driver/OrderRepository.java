@@ -57,7 +57,7 @@ public class OrderRepository {
         return new ArrayList<>(orderMap.keySet());
     }
 
-    public List<String> getAssignedOrders() {
+    public List<String> getAssignedOrders()  {
         return new ArrayList<>(orderPartnerMap.keySet());
     }
 
